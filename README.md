@@ -1,5 +1,5 @@
-# 🌸👾 Technical Course in Systems Development 👩‍💻🌸
-[🇧🇷 *Leia em Português/Read in Portuguese*](#curso-técnico-em-desenvolvimento-de-sistemas)
+# Technical Course in Systems Development
+[🇧🇷 *Leia em Português/Read in Portuguese*](#curso-técnico-em-desenvolvimento-de-sistemas) 👩‍💻🌸👾
 
 ## Topics
 - [Course Summary](#course-summary)
@@ -25,8 +25,8 @@ The Systems Development Technician course, offered by SENAC HUB ACADEMY, aims to
 | UC12: Integrated Application Developer Project.                                          | 60 hours      |
 | **TOTAL**                                                                                | **1,200 hours** |
 
-# 🌸👾 Curso Técnico em Desenvolvimento de Sistemas 👩‍💻🌸
-[*Leia em Inglês/Read in english*](#technical-course-in-systems-development)
+# Curso Técnico em Desenvolvimento de Sistemas
+[*Leia em Inglês/Read in english*](#technical-course-in-systems-development) 👩‍💻🌸👾
 
 ## Tópicos
 - [Resumo do Curso](#resumo-do-curso)
