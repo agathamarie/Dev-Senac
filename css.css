@@ -1,0 +1,58 @@
+/*   HEADER, CABEÇA DA PÁGINA   */
+header {
+    background-color: #FFCAE7;
+    height: 90px;
+    align-items: center; /* Alinha o logo verticalmente no centro */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#logotop {
+    height: 80px;
+    padding-left: 50px;
+}
+
+ul {
+    list-style-type: none; /* Remove as bolinhas dos itens da lista */
+    padding: 0; /* Remove o preenchimento padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+header, nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+   
+nav ul li {
+    margin-left: 1rem;
+    color: #FB68A6;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+/*-------------------------------------*/
+
+/*   Coiso  */
+#roblox {
+    height: 250px;
+}
+
+#coiso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 50px;
+}
+
+p {
+    display: flex;
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
