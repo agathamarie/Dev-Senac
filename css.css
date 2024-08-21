@@ -35,24 +35,71 @@ nav ul li {
 }
 /*-------------------------------------*/
 
-/*   Coiso  */
-#roblox {
-    height: 250px;
-}
-
+/*   Coiso   */
 #coiso {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 500px;
-    margin-right: 500px;
-    margin-top: 50px;
+    margin: 50px auto; /* Margem superior e inferior uniformes */
+    align-items: center; /* Alinha o logo verticalmente no centro */
 }
 
-p {
-    display: flex;
-    margin-left: 20px;
+#roblox {
+    height: 250px;
+    width: auto;
+}
+
+#coisotexto {
+    width: 600px; /* Define uma largura fixa */
+    margin: 0; /* Remove margens desnecessárias */
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     text-align: center;
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Quebra palavras longas, se necessário */
 }
+/*-------------------------------------*/
+
+/*   Sobre   */
+#sobre {
+    background: #FFCAE7;
+    margin: 50px auto; /* Margem superior e inferior uniformes */
+    width: 80%; /* Ajusta a largura */
+    max-width: 1200px;
+    padding: 40px 20px; /* Adiciona espaçamento interno */
+    box-sizing: border-box;
+    text-align: center; /* Centraliza todo o conteúdo */
+}
+
+#sobretexto {
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte do texto */
+    color: #FB68A6;
+    width: 600px; /* Define uma largura fixa */
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Quebra palavras longas, se necessário */
+}
+/*-------------------------------------*/
+
+/*   Jogos   */
+#jogos {
+    width: 80%; /* Ajusta a largura da seção */
+    max-width: 1200px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 50px auto; /* Margem superior e inferior uniformes */
+}
+
+h2 {
+    margin: 0; /* Remove margens desnecessárias */
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px 0; /* Adiciona espaçamento acima e abaixo do título */
+}
+/*-------------------------------------*/
