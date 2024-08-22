@@ -1,6 +1,6 @@
 /*   HEADER, CABEÇA DA PÁGINA   */
 header {
-    background-color: #FFCAE7;
+    background-color: #ff598b;
     height: 90px;
     align-items: center; /* Alinha o logo verticalmente no centro */
 }
@@ -29,7 +29,7 @@ header, nav ul {
    
 nav ul li {
     margin-left: 1rem;
-    color: #FB68A6;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
 }
@@ -39,8 +39,8 @@ nav ul li {
 #coiso {
     display: flex;
     justify-content: center;
-    margin: 50px auto; /* Margem superior e inferior uniformes */
     align-items: center; /* Alinha o logo verticalmente no centro */
+    padding: 50px;
 }
 
 #roblox {
@@ -52,33 +52,31 @@ nav ul li {
     width: 600px; /* Define uma largura fixa */
     margin: 0; /* Remove margens desnecessárias */
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-weight: 550;
     text-align: center;
     line-height: 1.6;
     padding: 20px;
     box-sizing: border-box;
     word-wrap: break-word; /* Quebra palavras longas, se necessário */
+    color: #382f32;
 }
 /*-------------------------------------*/
 
 /*   Sobre   */
 #sobre {
-    background: #FFCAE7;
-    margin: 50px auto; /* Margem superior e inferior uniformes */
-    width: 80%; /* Ajusta a largura */
-    max-width: 1200px;
-    padding: 40px 20px; /* Adiciona espaçamento interno */
+    background: #fbc5d8;
+    padding: 40px 20px;
     box-sizing: border-box;
     text-align: center; /* Centraliza todo o conteúdo */
 }
 
 #sobretexto {
     font-size: 1.2rem; /* Ajusta o tamanho da fonte do texto */
-    color: #FB68A6;
+    color: #ff598b;
     width: 600px; /* Define uma largura fixa */
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-weight: 550;
     line-height: 1.6;
     padding: 20px;
     box-sizing: border-box;
@@ -96,10 +94,38 @@ nav ul li {
 }
 
 h2 {
-    margin: 0; /* Remove margens desnecessárias */
+    margin: 0;
     font-family: 'Staatliches', sans-serif;
     font-weight: 300;
     text-align: center;
-    padding: 20px 0; /* Adiciona espaçamento acima e abaixo do título */
+    padding-bottom: 20px;
+}
+
+/*-------------------------------------*/
+
+.img {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transições suaves para o zoom e efeito de branco */
+}
+
+/*   Parceiros   */
+#parceiros {
+    width: 80%; /* Ajusta a largura da seção */
+    max-width: 1200px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 50px auto; /* Margem superior e inferior uniformes */
+}
+
+h2 {
+    margin: 0;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 20px;
 }
 /*-------------------------------------*/
