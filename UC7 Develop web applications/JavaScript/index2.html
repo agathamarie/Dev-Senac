@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    
+<script>
+
+    /*
+    var teste = 23;
+
+    if (teste == 23){
+        console.log("23 anos");
+    }
+    */
+    /*
+    var teste = false;
+
+    if (teste == false){
+        console.log("23 anos");
+    }
+    */
+    /*
+    var teste = 24;
+
+    if (teste == 23){
+        console.log("23 anos");
+    }
+    else if (teste == 24){
+        console.log("Tenho 24 anos")
+    }
+    else {
+        console.log("Não tenho 23 anos");
+    }
+    */
+
+    // Operador Ternario:
+    // Condição ? escopo verdadeiro : escopo falso;
+    /*
+    var resultado = teste == 24 ? "24 anos" : "Não tem 24 anos"
+    console.log(resultado);
+
+    */
+    /*
+    function areatriangulo (base, altura){
+        var area = (base * altura) / 2
+        console.log("A área do triângulo é: ", area)
+    }
+    let area = areatriangulo(2, 2);
+    areatriangulo(4, 4);
+    */
+
+    // Função para verificar número par
+    function par (num){
+        if (num % 2 == 0) {
+            console.log("É par!")
+        }
+        else{
+            console.log("É ímpar!")
+        }
+    }
+    par(5)
+    par(4)
+
+    // Função que determina se é um número primo ou não (Retornar true ou false)
+    function primo (num){
+        if (num / num == 1 && num / 1 == num){
+            console.log("É primo!")
+        }
+        else{
+            console.log("Não é primo!")            
+        }
+    }
+
+    //Função para calcular porcentagem de acresimo no salário
+    function poracresc(salario, novosalario) {
+        let resto = novosalario - salario;
+        let porcentagem = (resto / salario) * 100;
+        console.log("Seu salário aumentou em:", porcentagem.toFixed(2), "%");
+    }
+    poracresc(2000, 4100)
+
+    //
+</script>
+
+    <p class="paragrafo" id="">Teste1</p>
+    <p class="paragrafo">Teste2</p>
+    <p class="paragrafo">Teste3</p>
+    <p class="paragrafo">Teste4</p>
+    <p class="paragrafo">Teste5</p>
+    <p class="paragrafo">Teste6</p>
+    <p class="paragrafo">Teste7</p>
+    <p class="paragrafo">Teste8</p>
+
+</body>
+</html>
