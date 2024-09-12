@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #ffd4e8;
+    font-family: Arial, sans-serif;
+}
+
+/* header */
+#header-site {
+    padding: 10px 60px;
+    background-color: #f8338f;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* logo/imagem */
+#header-site #img-header {
+    width: 150px;
+    height: 110px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-site #img-header img{
+    height: 70px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: -8px;
+}
+
+#header-site #img-header p{
+    font-weight: 300;
+}
+
+#header-site #img-header #p1{
+    font-size: 25px;
+    font-family: 'Shrikhand', cursive;
+    margin-bottom: -10px;
+}
+
+#header-site #img-header #p2{
+    font-size: 15px;
+    font-family: 'Chewy', cursive;
+    margin-top: -5px;
+}
+
+/* menu sanduiche */
+#header-site #nav-header #box-btn-hamburguer{
+    display: none;
+}
+
+#header-site #nav-header #box-btn-hamburguer #btn-hamburguer{
+    background: transparent;
+    border: none;
+}
+
+#header-site #nav-header #box-btn-hamburguer div{
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+/* menu sanduiche fechado*/
+#header-site #nav-header #btn-hamburguer.ativo div{
+    display: none;
+}
+
+#header-site #nav-header #btn-hamburguer.ativo div:first-child{
+    display: block;
+    position: relative;
+    margin: 0;
+    transform: translate(2%, 72%) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+#header-site #nav-header #btn-hamburguer.ativo div:last-child{
+    display: block;
+    position: relative;
+    margin: 0;
+    transform: translateY(-40%) rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+/* nav bar */
+#header-site #nav-header{
+    padding: 5px 0;
+    height: 40px;
+}
+
+#header-site #nav-header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 100%;
+}
+
+#header-site #nav-header ul .item-nav-header {
+    height: 100%;
+}
+
+#header-site #nav-header ul .item-nav-header a {
+    padding: 8px 16px;
+    display: inline-block;
+    color: #ffd4e8;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#header-site #nav-header ul .item-nav-header a:hover {
+    border-bottom: 2px solid #ffd4e8;
+}
+
+/* imagem e texto*/
+#section-desc{
+    padding: 50px 500px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-desc img{
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+#section-desc #texto-desc{
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+    padding: 0 50px 0 100px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+    #header-site #nav-header{
+        height: auto;
+    }
+
+    #header-site #nav-header #box-btn-hamburguer{
+        display: block;
+    }
+
+    #header-site #nav-header ul .item-nav-header a {
+        padding: 20px 20px 20px 30px;
+    }
+
+    #header-site #nav-header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f8338f;
+        right: 0;
+        height: fit-content;
+        width: 80vw;
+        top: 100%;
+    }
+
+    #header-site #nav-header ul.ativo{
+        display: block;
+    }
+}
+
+/* celular */
+@media (max-width: 525px) {
+    #header-site #nav-header{
+        height: auto;
+    }
+
+    #header-site #nav-header #box-btn-hamburguer{
+        display: block;
+    }
+
+    #header-site #nav-header ul .item-nav-header a {
+        padding: 20px;
+    }
+
+    #header-site #nav-header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f8338f;
+        left: 0;
+        width: 100vw;
+        top: 100%;
+        text-align: center;
+    }
+
+    #header-site #nav-header ul.ativo{
+        display: block;
+    }
+}

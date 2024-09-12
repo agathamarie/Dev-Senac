@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plüsch pretty's</title>
+    <link rel="stylesheet" href="./css/desktop.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header  id="header-site">
+        <div id="img-header">
+            <img src="./img/logo.png" alt="Logo Plüsch pretty's">
+            <p id="p1">Plüsch</p>
+            <p id="p2">pretty's</p>
+        </div>
+
+        <nav id="nav-header">
+            <div id="box-btn-hamburguer">
+                <button id="btn-hamburguer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+
+            <ul>
+                <li class="item-nav-header">
+                    <a href="#">Inicio</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="#">Pelucias</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="section-desc">
+        <p id="texto-desc">Bem-vindo à Plüsch Pretty's!<br>Na Plüsch Pretty's, você encontra pelúcias irresistíveis e de alta qualidade, desde ursos clássicos até personagens fofos. Nossa loja oferece um ambiente acolhedor e atendimento personalizado, garantindo a melhor experiência de compra para você e para quem você ama. Venha nos visitar e descubra o presente perfeito em um mundo de suavidade e carinho!
+        </p>
+        <img src="./img/imagem.jfif" alt="Imagem Ilustrando Pelucias">
+    </section>
+
+</body>
+
+<script>
+    /*menu sanduiche*/
+    var btnhamburguer = document.getElementById("btn-hamburguer");
+    var navheader = document.querySelector("#nav-header ul");
+
+    btnhamburguer.addEventListener('click', function(evento){
+        evento.preventDefault();
+
+        navheader.classList.toggle('ativo');
+        btnhamburguer.classList.toggle('ativo');
+    });
+
+</script>
+
+</html>
