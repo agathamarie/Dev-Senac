@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @media (max-width: 768px) {
     #header-site #nav-header{
         height: auto;
@@ -25,4 +26,33 @@
     #header-site #nav-header ul.ativo{
         display: block;
     }
+=======
+@media (max-width: 768px) {
+    #header-site #nav-header{
+        height: auto;
+    }
+
+    #header-site #nav-header #box-btn-hamburguer{
+        display: block;
+    }
+
+    #header-site #nav-header ul .item-nav-header a {
+        padding: 20px 20px 20px 30px;
+    }
+
+    #header-site #nav-header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f8338f;
+        height: fit-content;
+        right: -23vw;
+        width: 80vw;
+        top: 11vw;
+    }
+
+    #header-site #nav-header ul.ativo{
+        display: block;
+    }
+>>>>>>> e5ff65414fa77474656f04499192e386f2a6d2f9
 }

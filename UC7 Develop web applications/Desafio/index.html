@@ -45,23 +45,279 @@
     </header>
 
     <section id="section-desc">
+        <img src="./img/imagem.jfif" alt="Imagem Ilustrando Pelucias">
         <p id="texto-desc">Bem-vindo à Plüsch Pretty's!<br>Na Plüsch Pretty's, você encontra pelúcias irresistíveis e de alta qualidade, desde ursos clássicos até personagens fofos. Nossa loja oferece um ambiente acolhedor e atendimento personalizado, garantindo a melhor experiência de compra para você e para quem você ama. Venha nos visitar e descubra o presente perfeito em um mundo de suavidade e carinho!
         </p>
-        <img src="./img/imagem.jfif" alt="Imagem Ilustrando Pelucias">
     </section>
+
+    <section id="sec-carrosel">
+        <p>Alguns de nossos produtos</p>
+
+        <div class="carossel">
+            <div class="nav nav-left">
+                <button><</button>
+            </div>
+
+            <div class="carrosel-cont">
+                <div class="slide">
+                    <div class="box-img">
+                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="box-img">
+                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="box-img">
+                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="box-img">
+                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav nav-right">
+                <button>></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec-contato" class="container">
+
+        <form action="" id="form-contato">
+            <div class="row">
+                <label for="pergunta">Pergunta/Ajuda:</label>
+                <input type="text" id="pergunta">
+            </div>
+           
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+           
+            <div class="row">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="tel" id="tel">
+            </div>
+           
+            <div class="row">
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+            </div>
+ 
+            <input id="enviar" type="submit" value="enviar">
+        </form>
+    </section>
+
 
 </body>
 
 <script>
-    /*menu sanduiche*/
-    var btnhamburguer = document.getElementById("btn-hamburguer");
-    var navheader = document.querySelector("#nav-header ul");
+     document.addEventListener('DOMContentLoaded', function(){
+        /* menu sanduiche */
+        var btnhamburguer = document.getElementById("btn-hamburguer");
+        var navheader = document.querySelector("#nav-header ul");
 
-    btnhamburguer.addEventListener('click', function(evento){
-        evento.preventDefault();
+        btnhamburguer.addEventListener('click', function(evento){
+            evento.preventDefault();
 
-        navheader.classList.toggle('ativo');
-        btnhamburguer.classList.toggle('ativo');
+            navheader.classList.toggle('ativo');
+            btnhamburguer.classList.toggle('ativo');
+        });
+
+        /* carrosel */
+        var carrosel = document.querySelector('.carrosel');
+        var carroselcont = document.querySelector('.carrosel-cont');
+        var slides = document.querySelectorAll('.slide');
+        var arrayOfSlides = Array.prototype.slice.call(slides);
+        var carosselDisplaying;
+        var screenSize;
+        setscreenSize();
+        var lengthOfSlides;
+
+        function addClone(){
+            var lastSlide = carroselcont.lastElementChild.cloneNode(true);
+            lastSlide.style.left = (-lengthOfSlides) + 'px';
+            carroselcont.insertBefore(lastSlide, carroselcont.firstChild);
+        }
+        function remoceClone (){
+            var firstSlide = carroselcont.firstChild;
+            firstSlide.parentNode.removeChild(firstSlide);
+        }
+
+        function moveSlideRigth(){
+            var slides = document.querySelectorAll('.slide');
+            var slideArray =  Array.prototype.slice.call(slides);
+            var width = 0;
+
+            slideArray.forEach(function(elemento, i){
+                elemento.style.left = width + 'px';
+                width += lengthOfSlides;
+            });
+            addClone();
+        }
+        moveSlideRigth();
+
+        function moveSlideLeft (){
+            var slides = document.querySelectorAll('.slide');
+            var slideArray =  Array.prototype.slice.call(slides);
+            slideArray = slideArray.reverse();
+            var maxwidth = (slideArray.lenght - 1) * lengthOfSlides;
+
+            slideArray.forEach(function(elemento, i){
+                maxwidth -= lengthOfSlides;
+                elemento.style.left = maxwidth + 'px';
+            });
+        }
+
+        window.addEventListener('resize', setscreenSize);
+
+        function setscreenSize(){
+            if (window.innerWidth >= 500){
+                carroseldisplay = 3;
+            }
+            else if (window.innerWidth >= 300){
+                carroseldisplay = 2;
+            }
+            else {
+                carroseldisplay = 1;
+            }
+            getscreensize();
+        }
+
+        function getscreensize (){
+            var slides = document.querySelectorAll('.slide');
+            var slideArray =  Array.prototype.slice.call(slides);
+            lengthOfSlides = (carrosel.offsetwidth / carroseldisplay);
+            var initialwidth = -lengthOfSlides;
+
+            slideArray.forEach(function(){
+                elemento.style.width = lengthOfSlides + 'px';
+                elemento.style.width = initialwidth + 'px';
+                initialwidth += lengthOfSlides;
+            });
+        }
+
+        var rigthNav = document.querySelector('.nav-rigth');
+        rigthNav.addEventListener('click', moveleft);
+
+        var moving = true;
+
+        function moverigth(){
+            if (moving){
+                moving = false;
+                var lastSlide = carroselcont.lastElementChild;
+                lastSlide.parentNode.removeChild(lastSlide);
+                carroselcont.insertBefore(lastSlide, carroselcont.firstChild);
+                removeClone();
+                var firstChild =  carroselcont.firstElementChild;
+                firstSlide.addEventListener('transitioned', activateAgain);
+                moveSlideRigth();
+            }
+        }
+
+        function activateAgain(){
+            var firstChild = carroselcont.firstElementChild;
+            moving = true;
+            firstSlide.removeEventListener('transitioned', activateAgain);
+        }
+
+        var leftnav = document.querySelector('.nav-left');
+        leftnav.addEventListener('click', moverigth);
+
+        function moveleft(){
+            if(moving){
+                moving = false;
+                removeClone();
+                var firstChild = carroselcont.firstElementChild;
+                firstSlide.addEventListener('transitioned', replaceToEnd);
+                moveSlideLeft();
+            }
+        }
+
+        function replaceToEnd(){
+            var firstSlide = carroselcont.firstElementChild;
+            firstSlide.parentNode.removeChild(firstSlide);
+            carroselcont.appendChild(firstSlide);
+            firstSlide.style.left = ((arrayOfSlides.length -1) * lengthOfSlides) + 'px';
+            addClone();
+            moving = true;
+            firstSlide.removeEventListener('transitioned', replaceToEnd);
+        }
+
+        carroselcont.addEventListener('mousedown', seeMovement);
+        
+        var initialX;
+        var initialPos;
+
+        function seeMovement(elemento){
+            initialX = elemento.clientX
+            getInitialPos();
+            carroselcont.addEventListener('mousemove', slightMove);
+            document.addEventListener('mouseup', moveBasedOnMouse);
+        }
+
+        function slightMove (elemento){
+            if(moving){
+                var movingx = elemento.clientX;
+                var difference = initalX - movingx;
+                if(Math.abs(difference) < (lengthOfSlides / 4)){
+                    slightMoveSlides(difference);
+                }
+            }
+        }
+
+        function getInitialPos{
+            var slides = document.querySelectorAll('.slides');
+            var slideArray =  Array.prototype.slice.call(slides);
+
+            initialPos = [];
+            slideArray.forEach(function(elemento){
+                var left = Math.floor(parseInt(elemento.style.slice(0, -2)));
+            });
+        }
+
+        function slightMoveSlides(newX){
+            var slides = document.querySelectorAll('.slides');
+            var slideArray =  Array.prototype.slice.call(slides);
+
+            slideArray.forEach(function(elemento, i){
+                var oldleft = initialPos[i];
+                elemento.style.left = (oldleft + newX) + 'px';
+            });
+        }
+
+        function moveBasedOnMouse(elemento){
+            var finalX = elemento.clientX;
+            if(initalX - finalX > 0){
+                moverigth();
+            }
+            else if (initialX - finalX < 0){
+                moveleft();
+            }
+
+            document.removeEventListener('mouseup', moveBasedOnMouse);
+            carroselcont.removeEventListener('mousemove', slightMove);
+        }
+
+        /* enviar formulario */
+        var formulario = document.getElementById("formulario");
+
+        formulario.addEventListener('submit', function(eventoformulario){
+            eventoformulario.preventDefault();
+
+            var inputusuario = document.getElementById("usuario");
+            var valorusuario = inputusuario.value.trim();
+
+            if(valorusuario.lenght < 3){
+                alert("Usuário Incorreto!");
+            }
+        });
     });
 
 </script>
