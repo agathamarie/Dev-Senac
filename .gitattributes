@@ -1,3 +1,0 @@
-*.sql linguist-language=SQL
-*.sql linguist-detectable
-*.sql -linguist-vendored
