@@ -149,22 +149,22 @@
                 <label for="pergunta">Pergunta/Ajuda:</label>
                 <input type="text" id="pergunta">
             </div>
-           
+    
             <div class="row">
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email">
             </div>
-           
+    
             <div class="row">
                 <label for="telefone">Telefone:</label>
                 <input type="tel" name="tel" id="tel">
             </div>
-           
+    
             <div class="row">
                 <label for="mensagem">Mensagem:</label>
                 <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
             </div>
- 
+    
             <input id="enviar" type="submit" value="ENVIAR">
         </form>
     </section>
@@ -391,17 +391,36 @@
         }
 
         /* enviar formulario */
-        var formulario = document.getElementById("formulario");
+        var formulario = document.getElementById("form-contato");
 
-        formulario.addEventListener('submit', function(eventoformulario){
+        formulario.addEventListener('submit', function(eventoformulario) {
             eventoformulario.preventDefault();
 
-            var inputusuario = document.getElementById("usuario");
-            var valorusuario = inputusuario.value.trim();
+            var pergunta = document.getElementById("pergunta").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var telefone = document.getElementById("tel").value.trim();
+            var mensagem = document.getElementById("mensagem").value.trim();
 
-            if(valorusuario.lenght < 3){
-                alert("Usuário Incorreto!");
+            if (!pergunta || !email || !telefone || !mensagem) {
+                alert("Por favor, preencha todos os campos.");
+                return;
             }
+
+            // Validação do email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor, insira um email válido.");
+                return;
+            }
+
+            // Validação do telefone (só números)
+            var telefoneRegex = /^[0-9]+$/;
+            if (!telefoneRegex.test(telefone)) {
+                alert("Por favor, insira um telefone válido (somente números).");
+                return;
+            }
+
+            alert("Formulário enviado com sucesso!");
         });
     });
 
