@@ -45,40 +45,95 @@
     </header>
 
     <section id="section-desc">
-        <img src="./img/imagem.jfif" alt="Imagem Ilustrando Pelucias">
-        <p id="texto-desc">Bem-vindo à Plüsch Pretty's!<br>Na Plüsch Pretty's, você encontra pelúcias irresistíveis e de alta qualidade, desde ursos clássicos até personagens fofos. Nossa loja oferece um ambiente acolhedor e atendimento personalizado, garantindo a melhor experiência de compra para você e para quem você ama. Venha nos visitar e descubra o presente perfeito em um mundo de suavidade e carinho!
-        </p>
+        <div id="texto-desc">
+            <p id="texto-titulo">Bem-vindo à Plüsch Pretty's!</p>
+            <p id="texto">Na Plüsch Pretty's, você encontra pelúcias irresistíveis e de alta qualidade, desde ursos clássicos até personagens fofos. Nossa loja oferece um ambiente acolhedor e atendimento personalizado, garantindo a melhor experiência de compra para você e para quem você ama. Venha nos visitar e descubra o presente perfeito em um mundo de suavidade e carinho!</p>
+            <a href="https://github.com/agathamarie">Ver Localização</a>
+        </div>
+        <img src="./img/imagem.webp" alt="Imagem Ilustrando Pelucias">
     </section>
 
-    <section id="sec-carrosel">
+    <section id="sec-carousel">
         <p>Alguns de nossos produtos</p>
 
-        <div class="carossel">
+        <div class="carousel">
             <div class="nav nav-left">
                 <button><</button>
             </div>
 
-            <div class="carrosel-cont">
+            <div class="carousel-content">
+
                 <div class="slide">
-                    <div class="box-img">
-                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem1.jfif" alt="Ursinho de Pelucia">
+                        </div>
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="box-img">
-                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem2.jfif" alt="Ursinho de Pelucia">
+                        </div>
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="box-img">
-                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem3.jfif" alt="Ursinho de Pelucia">
+                        </div>
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="box-img">
-                        <img src="./img/ursinho1.webp" alt="Ursinho de Pelucia">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem4.jfif" alt="Ursinho de Pelucia">
+                        </div>
                     </div>
                 </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem5.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem6.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem7.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem8.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem9.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="conteudo-produto">
+                        <div class="box-img-produto">
+                            <img src="./img/imagem10.jfif" alt="Ursinho de Pelucia">
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="nav nav-right">
@@ -87,8 +142,8 @@
         </div>
     </section>
 
-    <section id="sec-contato" class="container">
-
+    <section id="sec-contato">
+        <p>Alguma dúvida?</p>
         <form action="" id="form-contato">
             <div class="row">
                 <label for="pergunta">Pergunta/Ajuda:</label>
@@ -110,9 +165,17 @@
                 <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
             </div>
  
-            <input id="enviar" type="submit" value="enviar">
+            <input id="enviar" type="submit" value="ENVIAR">
         </form>
     </section>
+
+    <footer>
+        <div id="footer-e">
+            <a href="https://github.com/agathamarie"><img class="link" src="./img/github.png""></a>
+            <img src="./img/logo.png" alt="Logo Plüsch pretty's">
+            <a href="https://www.linkedin.com/in/agathamarie/"><img class="link" src="./img/linkedin.png" alt="Linkedin Meu"></a>
+        </div>
+    </footer>
 
 
 </body>
@@ -131,178 +194,200 @@
         });
 
         /* carrosel */
-        var carrosel = document.querySelector('.carrosel');
-        var carroselcont = document.querySelector('.carrosel-cont');
+        var carousel = document.querySelector('.carousel');
+        var carouselContent = document.querySelector('.carousel-content');
         var slides = document.querySelectorAll('.slide');
-        var arrayOfSlides = Array.prototype.slice.call(slides);
-        var carosselDisplaying;
+        var arrayOfSlides = Array.prototype.slice.call(slides); // Transformando NodeList em array
+        var carouselDisplaying;
         var screenSize;
-        setscreenSize();
-        var lengthOfSlides;
+        setScreenSize(); // Inicializa o tamanho da tela
+        var lengthOfSlide;
 
-        function addClone(){
-            var lastSlide = carroselcont.lastElementChild.cloneNode(true);
-            lastSlide.style.left = (-lengthOfSlides) + 'px';
-            carroselcont.insertBefore(lastSlide, carroselcont.firstChild);
+        // Função para adicionar um clone do último slide no início
+        function addClone() {
+            var lastSlide = carouselContent.lastElementChild.cloneNode(true);
+            lastSlide.style.left = (-lengthOfSlide) + 'px';
+            carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
         }
-        function remoceClone (){
-            var firstSlide = carroselcont.firstChild;
+
+        // Função para remover o primeiro slide (clone)
+        function removeClone() {
+            var firstSlide = carouselContent.firstChild;
             firstSlide.parentNode.removeChild(firstSlide);
         }
 
-        function moveSlideRigth(){
+        // Movimenta os slides para a direita
+        function moveSlideRight() {
             var slides = document.querySelectorAll('.slide');
-            var slideArray =  Array.prototype.slice.call(slides);
+            var slideArray = Array.prototype.slice.call(slides);
             var width = 0;
 
-            slideArray.forEach(function(elemento, i){
+            slideArray.forEach(function(elemento) {
                 elemento.style.left = width + 'px';
-                width += lengthOfSlides;
+                width += lengthOfSlide;
             });
             addClone();
         }
-        moveSlideRigth();
+        moveSlideRight(); // Move os slides ao carregar a página
 
-        function moveSlideLeft (){
+        // Movimenta os slides para a esquerda
+        function moveSlideLeft() {
             var slides = document.querySelectorAll('.slide');
-            var slideArray =  Array.prototype.slice.call(slides);
+            var slideArray = Array.prototype.slice.call(slides);
             slideArray = slideArray.reverse();
-            var maxwidth = (slideArray.lenght - 1) * lengthOfSlides;
+            var maxWidth = (slideArray.length - 1) * lengthOfSlide;
 
-            slideArray.forEach(function(elemento, i){
-                maxwidth -= lengthOfSlides;
-                elemento.style.left = maxwidth + 'px';
+            slideArray.forEach(function(elemento) {
+                maxWidth -= lengthOfSlide;
+                elemento.style.left = maxWidth + 'px';
             });
         }
 
-        window.addEventListener('resize', setscreenSize);
+        // Atualiza o layout conforme o tamanho da tela
+        window.addEventListener('resize', setScreenSize);
 
-        function setscreenSize(){
-            if (window.innerWidth >= 500){
-                carroseldisplay = 3;
+        // Define quantos slides serão exibidos de acordo com o tamanho da tela
+        function setScreenSize() {
+            if (window.innerWidth >= 992) {
+                carouselDisplaying = 4;
             }
-            else if (window.innerWidth >= 300){
-                carroseldisplay = 2;
+            else if (window.innerWidth >=768){
+                carouselDisplaying = 2;
+            }
+            else if (window.innerWidth >= 525) {
+                carouselDisplaying = 1;
+            }
+            else if (window.innerWidth >= 300) {
+                carouselDisplaying = 1;
             }
             else {
-                carroseldisplay = 1;
+                carouselDisplaying = 1;
             }
-            getscreensize();
+            getScreenSize();
         }
 
-        function getscreensize (){
+        // Ajusta o tamanho e posição de cada slide
+        function getScreenSize() {
             var slides = document.querySelectorAll('.slide');
-            var slideArray =  Array.prototype.slice.call(slides);
-            lengthOfSlides = (carrosel.offsetwidth / carroseldisplay);
-            var initialwidth = -lengthOfSlides;
+            var slideArray = Array.prototype.slice.call(slides);
+            lengthOfSlide = (carousel.offsetWidth / carouselDisplaying);
+            var initialWidth = -lengthOfSlide;
 
-            slideArray.forEach(function(){
-                elemento.style.width = lengthOfSlides + 'px';
-                elemento.style.width = initialwidth + 'px';
-                initialwidth += lengthOfSlides;
+            slideArray.forEach(function(elemento) {
+                elemento.style.width = lengthOfSlide + 'px';
+                elemento.style.left = initialWidth + 'px';
+                initialWidth += lengthOfSlide;
             });
         }
 
-        var rigthNav = document.querySelector('.nav-rigth');
-        rigthNav.addEventListener('click', moveleft);
+        var rightNav = document.querySelector('.nav-right');
+        rightNav.addEventListener('click', moveLeft);
 
         var moving = true;
 
-        function moverigth(){
-            if (moving){
+        // Move os slides para a direita
+        function moveRight() {
+            if (moving) {
                 moving = false;
-                var lastSlide = carroselcont.lastElementChild;
+                var lastSlide = carouselContent.lastElementChild;
                 lastSlide.parentNode.removeChild(lastSlide);
-                carroselcont.insertBefore(lastSlide, carroselcont.firstChild);
+                carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
                 removeClone();
-                var firstChild =  carroselcont.firstElementChild;
-                firstSlide.addEventListener('transitioned', activateAgain);
-                moveSlideRigth();
+                var firstSlide = carouselContent.firstElementChild;
+                firstSlide.addEventListener('transitionend', activateAgain);
+                moveSlideRight();
             }
         }
 
-        function activateAgain(){
-            var firstChild = carroselcont.firstElementChild;
+        // Reativa a movimentação após a transição
+        function activateAgain() {
+            var firstSlide = carouselContent.firstElementChild;
             moving = true;
-            firstSlide.removeEventListener('transitioned', activateAgain);
+            firstSlide.removeEventListener('transitionend', activateAgain);
         }
 
-        var leftnav = document.querySelector('.nav-left');
-        leftnav.addEventListener('click', moverigth);
+        var leftNav = document.querySelector('.nav-left');
+        leftNav.addEventListener('click', moveRight);
 
-        function moveleft(){
-            if(moving){
+        // Move os slides para a esquerda
+        function moveLeft() {
+            if (moving) {
                 moving = false;
                 removeClone();
-                var firstChild = carroselcont.firstElementChild;
-                firstSlide.addEventListener('transitioned', replaceToEnd);
+                var firstSlide = carouselContent.firstElementChild;
+                firstSlide.addEventListener('transitionend', replaceToEnd);
                 moveSlideLeft();
             }
         }
 
-        function replaceToEnd(){
-            var firstSlide = carroselcont.firstElementChild;
+        // Move o primeiro slide para o fim e adiciona o clone
+        function replaceToEnd() {
+            var firstSlide = carouselContent.firstElementChild;
             firstSlide.parentNode.removeChild(firstSlide);
-            carroselcont.appendChild(firstSlide);
-            firstSlide.style.left = ((arrayOfSlides.length -1) * lengthOfSlides) + 'px';
+            carouselContent.appendChild(firstSlide);
+            firstSlide.style.left = ((arrayOfSlides.length - 1) * lengthOfSlide) + 'px';
             addClone();
             moving = true;
-            firstSlide.removeEventListener('transitioned', replaceToEnd);
+            firstSlide.removeEventListener('transitionend', replaceToEnd);
         }
 
-        carroselcont.addEventListener('mousedown', seeMovement);
-        
+        // Detecta o movimento do mouse
+        carouselContent.addEventListener('mousedown', seeMovement);
+
         var initialX;
         var initialPos;
 
-        function seeMovement(elemento){
-            initialX = elemento.clientX
+        function seeMovement(evento) {
+            initialX = evento.clientX;
             getInitialPos();
-            carroselcont.addEventListener('mousemove', slightMove);
+            carouselContent.addEventListener('mousemove', slightMove);
             document.addEventListener('mouseup', moveBasedOnMouse);
         }
 
-        function slightMove (elemento){
-            if(moving){
-                var movingx = elemento.clientX;
-                var difference = initalX - movingx;
-                if(Math.abs(difference) < (lengthOfSlides / 4)){
+        function slightMove(evento) {
+            if (moving) {
+                var movingX = evento.clientX;
+                var difference = initialX - movingX;
+                if (Math.abs(difference) < (lengthOfSlide / 4)) {
                     slightMoveSlides(difference);
                 }
             }
         }
 
-        function getInitialPos{
-            var slides = document.querySelectorAll('.slides');
-            var slideArray =  Array.prototype.slice.call(slides);
-
+        // Captura a posição inicial dos slides
+        function getInitialPos() {
+            var slides = document.querySelectorAll('.slide');
+            var slidesArray = Array.prototype.slice.call(slides);
             initialPos = [];
-            slideArray.forEach(function(elemento){
-                var left = Math.floor(parseInt(elemento.style.slice(0, -2)));
+
+            slidesArray.forEach(function(elemento) {
+                var left = Math.floor(parseInt(elemento.style.left.slice(0, -2), 10));
+                initialPos.push(left);
             });
         }
 
-        function slightMoveSlides(newX){
-            var slides = document.querySelectorAll('.slides');
-            var slideArray =  Array.prototype.slice.call(slides);
+        // Move os slides conforme a posição do mouse
+        function slightMoveSlides(newX) {
+            var slides = document.querySelectorAll('.slide');
+            var slidesArray = Array.prototype.slice.call(slides);
 
-            slideArray.forEach(function(elemento, i){
-                var oldleft = initialPos[i];
-                elemento.style.left = (oldleft + newX) + 'px';
+            slidesArray.forEach(function(elemento, i) {
+                var oldLeft = initialPos[i];
+                elemento.style.left = (oldLeft + newX) + 'px';
             });
         }
 
-        function moveBasedOnMouse(elemento){
-            var finalX = elemento.clientX;
-            if(initalX - finalX > 0){
-                moverigth();
-            }
-            else if (initialX - finalX < 0){
-                moveleft();
+        // Move os slides com base no movimento do mouse
+        function moveBasedOnMouse(evento) {
+            var finalX = evento.clientX;
+            if (initialX - finalX > 0) {
+                moveRight();
+            } else if (initialX - finalX < 0) {
+                moveLeft();
             }
 
             document.removeEventListener('mouseup', moveBasedOnMouse);
-            carroselcont.removeEventListener('mousemove', slightMove);
+            carouselContent.removeEventListener('mousemove', slightMove);
         }
 
         /* enviar formulario */
