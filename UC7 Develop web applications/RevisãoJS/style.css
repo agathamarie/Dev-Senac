@@ -1,0 +1,24 @@
+.card-sac{
+    border: 1px solid #ff47a3;
+}
+
+.card-sac .header-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.card-sac .header-card button{
+    background: none;
+    border: none;
+}
+
+.card-sac .article-card{
+    height: 0;
+    overflow: hidden;
+}
+
+.card-sac.ativo .article-card{
+    height: 35px;
+}
