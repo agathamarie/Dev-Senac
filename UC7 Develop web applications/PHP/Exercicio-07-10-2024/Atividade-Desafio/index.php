@@ -6,35 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="formCadastro" action="" method="get">
-        <label>                       
-        <input type="text" name="nome">
-        Salário: <input type="float" name="salario">
-        Cargo: <input type="text" name="cargo">
-        Idade: <input type="number" name="idade">
-        Telefone: <input type="number" name="telefone">
-        <input id="button-submit" type="submit">
+    <form method="get" id="formCadastro">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="salario">Salário: </label>
+        <input type="number" id="salario" name="salario">
+
+        <select id="cargo" name="cargo">
+            <option value="Gerente">Gerente</option>
+            <option value="Analista de TI">Analista de TI</option>
+            <option value="Desenvolvedora">Desenvolvedora</option>
+            <option value="Designer">Designer</option>
+            <option value="Assistente Administrativo">Assistente Administrativo</option>
+            <option value="Consultor">Consultor</option>
+        </select>
+        
+
+        <label for="idade">Idade: </label>
+        <input type="number" id="idade" name="idade">
+
+        <label for="tel">Telefone: </label>
+        <input type="text" id="tel" name="tel">
+
+        <input type="submit" id="buttonSubmit" value="Cadastrar">
     </form>
+    <?php
+        $servidor = 'localhost';
+        $usuario = 'root';
+        $senha = '';
+        $bancodados = 'empresa';
+        $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
+        // ---------------
+
+        $nome = $_GET['nome'];
+        $salario = $_GET['salario'];
+        $cargo = $_GET['cargo'];
+        $idade = $_GET['idade'];
+        $telefone = $_GET['telefone'];
+
+        $conexao->query("insert into funcionario (nome, cargo, idade, salario, telefone) values 
+        ('$nome', '$cargo', '$idade', '$salario', '$telefone');
+
+        // ---------------
+    ?>
 
     <section id="listarFuncionarios">
         <?php
-            $servidor = 'localhost';
-            $usuario = 'root';
-            $senha = '';
-            $bancodados = 'empresa';
-            $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
-            // ---------------
-
-            $nome = $_GET['nome'];
-            $salario = $_GET['salario'];
-            $cargo = $_GET['cargo'];
-            $idade = $_GET['idade'];
-            $telefone = $_GET['telefone'];
-            
-            $conexao->query("insert into funcionario (nome, cargo, idade, salario, telefone) values 
-            ('$nome', '$cargo', '$idade', '$salario', '$telefone');
-            
-            // ---------------
             function renderTemplate($funcionario){
                 include 'template.php';
             }
