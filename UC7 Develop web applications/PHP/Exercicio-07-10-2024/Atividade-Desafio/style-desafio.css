@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;;
+}
+
+.container{
+    max-width: 1500px;
+    margin: 10px auto;
+    padding: 12px;
+}
+
+/* ------ Parte do Header ------ */
+#header-site {
+    padding: 10px 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* logo*/
+#header-site #img-header {
+    width: auto;
+    height: 18px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-site #img-header img{
+    height: 18px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* nav bar */
+#header-site #nav-header {
+    padding: 5px 0;
+    height: 40px;
+    display: flex; /* adiciona essa linha */
+    justify-content: center; /* adiciona essa linha */
+}
+
+#header-site #nav-header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+#header-site #nav-header ul .item-nav-header {
+    height: 100%;
+}
+
+#header-site #nav-header ul .item-nav-header a {
+    padding: 2px 15px;
+    display: inline-block;
+    color: #1b1b1b;
+    font-size: 10px;
+}
+
+#header-site #nav-header ul .item-nav-header a:hover {
+    box-shadow: 0 1px 0 #4b4b4b;
+}
+
+/* menu sanduiche */
+#header-site #nav-header #box-btn-hamburguer{
+    display: none;
+}
+
+#header-site #nav-header #box-btn-hamburguer #btn-hamburguer{
+    background: transparent;
+    border: none;
+}
+
+#header-site #nav-header #box-btn-hamburguer div{
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+/* menu sanduiche fechado*/
+#header-site #nav-header #btn-hamburguer.ativo div{
+    display: none;
+}
+
+#header-site #nav-header #btn-hamburguer.ativo div:first-child{
+    display: block;
+    position: relative;
+    margin: 0;
+    transform: translate(2%, 72%) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+#header-site #nav-header #btn-hamburguer.ativo div:last-child{
+    display: block;
+    position: relative;
+    margin: 0;
+    transform: translateY(-40%) rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+
+/* ------ Parte do Formulário ------ */
+#secFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 768px;
+    gap: 25px;
+    background-color: #737373;
+    padding: 2rem 2rem 1.5rem;
+}
+    #ctd-form {
+        padding: 12px;
+    }
+        #ctd-form h2{
+            color: #EDEEE9;
+        }
+        #ctd-form p{
+            color: #EDEEE9;
+        }
+
+    #formCadastro{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: flex-end
+    }
+        .row{
+            width: 450px;
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .input{
+                height: 40px;
+                width: auto;
+                border-radius: 0px;
+                border: 1px solid #ffffff;
+                background-color: #ffffff;
+            }
+                .input::placeholder{
+                    padding: 5px;
+                    color: #1b1b1b;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 300;
+                }
+            #input-nome:focus {
+                outline-color: #F25022;
+                box-shadow: 0 0 5px #333;
+            }         
+            #input-salario:focus {
+                outline-color: #7FBA00;
+                box-shadow: 0 0 5px #333;
+            }  
+            #input-idade:focus {
+                outline-color: #00A4EF;
+                box-shadow: 0 0 5px #333;
+            }
+            #input-telefone:focus {
+                outline-color: #FFB900;
+                box-shadow: 0 0 5px #333;
+            }
+            #input-cargo:focus {
+                outline-color: #737373;
+                box-shadow: 0 0 5px #333;
+            }
+
+        #buttonSubmit {
+            height: 30px;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #1b1b1b;
+            color: #EDEEE9;
+            transition: background-color 0.3s ease-in-out;
+        }
+            
+        #buttonSubmit:hover {
+            color: #1b1b1b;
+            font-weight: 600;
+            background-image: linear-gradient(90deg, rgba(242,80,34,1) 25%, rgba(127,186,0,1) 25%, rgba(127,186,0,1) 50%, rgba(0,164,239,1) 50%, rgba(0,164,239,1) 75%, rgba(255,185,0,1) 75%);
+        }
+
+/* ------ Parte dos Funcionarios ------ */
+#listarFuncionarios{
+    display: block;
+   /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; */
+}
+    .card-funcionario {
+        width: 25%;
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-funcionario header p{
+        font-size: 18px;
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    #filtro{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
