@@ -14,7 +14,7 @@
 /* ------ Parte do Header ------ */
 #header-site {
     padding: 10px 10px;
-    background-color: #ffffff;
+    background-color: #EDEEE9;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,14 +25,14 @@
 /* logo*/
 #header-site #img-header {
     width: auto;
-    height: 18px;
+    height: 35px;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
 #header-site #img-header img{
-    height: 18px;
+    height: 35px;
     width: auto;
     object-fit: cover;
     object-position: center;
@@ -42,8 +42,8 @@
 #header-site #nav-header {
     padding: 5px 0;
     height: 40px;
-    display: flex; /* adiciona essa linha */
-    justify-content: center; /* adiciona essa linha */
+    display: flex;
+    justify-content: center;
 }
 
 #header-site #nav-header ul {
@@ -63,10 +63,11 @@
     display: inline-block;
     color: #1b1b1b;
     font-size: 10px;
+    text-decoration: none;
 }
 
 #header-site #nav-header ul .item-nav-header a:hover {
-    box-shadow: 0 1px 0 #4b4b4b;
+    box-shadow: 0 1px 0 #5a5658;
 }
 
 /* menu sanduiche */
@@ -116,7 +117,7 @@
     width: 100%;
     max-width: 768px;
     gap: 25px;
-    background-color: #737373;
+    background-color: #5a5658;
     padding: 2rem 2rem 1.5rem;
 }
     #ctd-form {
@@ -155,26 +156,10 @@
                     font-family: Arial, Helvetica, sans-serif;
                     font-weight: 300;
                 }
-            #input-nome:focus {
-                outline-color: #F25022;
+            .input:focus {
+                outline-color: #ff5ec5;
                 box-shadow: 0 0 5px #333;
             }         
-            #input-salario:focus {
-                outline-color: #7FBA00;
-                box-shadow: 0 0 5px #333;
-            }  
-            #input-idade:focus {
-                outline-color: #00A4EF;
-                box-shadow: 0 0 5px #333;
-            }
-            #input-telefone:focus {
-                outline-color: #FFB900;
-                box-shadow: 0 0 5px #333;
-            }
-            #input-cargo:focus {
-                outline-color: #737373;
-                box-shadow: 0 0 5px #333;
-            }
 
         #buttonSubmit {
             height: 30px;
@@ -182,24 +167,23 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #1b1b1b;
+            background-color: #ff54ad;
             color: #EDEEE9;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.1s ease-in-out;
         }
             
         #buttonSubmit:hover {
-            color: #1b1b1b;
+            color: #EDEEE9;
             font-weight: 600;
-            background-image: linear-gradient(90deg, rgba(242,80,34,1) 25%, rgba(127,186,0,1) 25%, rgba(127,186,0,1) 50%, rgba(0,164,239,1) 50%, rgba(0,164,239,1) 75%, rgba(255,185,0,1) 75%);
+            background-color: #1b1b1b;
         }
 
 /* ------ Parte dos Funcionarios ------ */
 #listarFuncionarios{
-    display: block;
-   /* display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; */
+    gap: 10px;
 }
     .card-funcionario {
         width: 25%;
@@ -210,16 +194,103 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .card-funcionario header p{
-        font-size: 18px;
+    p{
+        color: black;
+        text-align: center;
+    }
+    .p1{
+        font-size: 15px;
+    }
+    .p2{
+        margin-top: 5px;
+        font-size: 13px;
+        color: #333;
+    }
+    #p3{
+        font-size: 10px;
+        color: #5a5658;
+        border-top: 1px solid #eeeeee;
+        margin-top: 5px;
+        padding-top: 3px;
     }
 
-    a{
-        color: black;
-        text-decoration: none;
+#filtro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 768px;
+}
+
+#filtroform{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    gap: 10px;
+}
+    .rowfun{
+        width: auto;
+        margin: 5px 0;
     }
-    #filtro{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
+    .input-fun{
+        height: 30px;
+        width: auto;
+        border-radius: 0px;
+        border: 1px solid #3a3a3a;
+        background-color: #ffffff;
     }
+        .input-fun::placeholder{
+            padding: 5px;
+            color: #1b1b1b;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+        }
+    #input-cargo-fun{
+        width: 250px;
+    }
+    .input-fun:focus{
+        outline-color: #f30cb7;
+        box-shadow: 0 0 5px #333;
+    }
+
+    #buttonFiltrar{
+        width: 50px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #1b1b1b;
+        color: #EDEEE9;
+        transition: background-color 0.1s ease-in-out;
+    }   
+    #buttonFiltrar:hover {
+        color: #EDEEE9;
+        font-weight: 600;
+        background-color: #ff54ad;
+    }
+
+/* ------ Parte do Rodapé ------ */
+#footer{
+    display: flex;
+    height: 55px;
+    align-items: center;
+    text-align: center;
+    background-color:#EDEEE9;
+    justify-content: center;
+}
+#footerp{
+    align-items: center;
+    text-align: center;
+}
+
+#footerp p{
+    font-size: 15px;
+}
+
+#pp1{
+    color: #ff54ad;
+}
+#pp2{
+    color:#5a5658;
+}

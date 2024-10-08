@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style-desafio.css">
 </head>
 <body>
+
     <header  id="header-site">
         <div id="img-header">
-            <img src="logo.png" alt="Logo Microsoft">
+            <img src="tecnologica.png" alt="Logo Tecnologia">
         </div>
 
         <nav id="nav-header">
@@ -40,29 +41,29 @@
 
     <section id="secFormulario" class="container">
         <div id="ctd-form">
-            <h2>Cadastre o Funcionário</h2> 
+            <h2>Cadastrar novo Funcionário</h2> 
             <p>Cadastre o novo funcionário e o deseje boas-vindas!</p>
         </div>
 
         <form method="get" id="formCadastro">
             <div class="row">
-                <input type="text" class="input" id="input-nome" name="nome" placeholder="Nome: ">
+                <input type="text" class="input" name="nome" placeholder="Nome: ">
             </div>
 
             <div class="row">
-                <input type="number" class="input" id="input-salario" name="salario" placeholder="Salário: ">
+                <input type="number" class="input" name="salario" placeholder="Salário: ">
             </div>
 
             <div class="row">    
-                <input type="number" class="input" id="input-idade" name="idade" placeholder="Idade: ">
+                <input type="number" class="input" name="idade" placeholder="Idade: ">
             </div>
 
             <div class="row">    
-                <input type="text" class="input" id="input-telefone" name="telefone" placeholder="Telefone: ">
+                <input type="text" class="input" name="telefone" placeholder="Telefone: ">
             </div>
 
             <div class="row">
-                <select class="input" id="input-cargo" name="cargo" placeholder="Cargo: ">
+                <select class="input" name="cargo" placeholder="Cargo: ">
                     <option value="Administrador de Banco de Dados">Administrador de Banco de Dados</option>
                     <option value="Administrador de Redes">Administrador de Redes</option>
                     <option value="Analista de Automação">Analista de Automação</option>
@@ -110,7 +111,7 @@
         $bancodados = 'empresa';
         $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
 
-        if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
+        if (isset($_GET['nome'], $_GET['salario'], $_GET['cargo'], $_GET['idade'], $_GET['telefone'])) {
             $nome = $_GET['nome'];
             $salario = $_GET['salario'];
             $cargo = $_GET['cargo'];
@@ -118,24 +119,18 @@
             $telefone = $_GET['telefone'];
 
             $query = "insert into funcionario (nome, cargo, idade, salario, telefone) values ('$nome', '$cargo', '$idade', '$salario', '$telefone')";
-            mysqli_query($conexao, $query);
+            mysqli_query($conexao, $query); 
 
-            // Redirecionar o usuário para uma página diferente
-            header('Location: index.php');
-            exit;
+            mysqli_close($conexao);
         }
-
-        mysqli_close($conexao);
     ?>
 
     <section id="listarFuncionarios" class="container">
         <div id="filtro">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                <div class="rowfun">
-                    <input type="text" class="input-fun" id="input-nome-fun" name="nome-fun" placeholder="Nome: ">
-                </div>
+            <form id="filtroform" method="get">
                 <div class="rowfun">
                     <select class="input-fun" id="input-cargo-fun" name="cargo-fun" placeholder="Cargo: ">
+                        <option value="-- Selecionar --">-- Selecione --</option>
                         <option value="Administrador de Banco de Dados">Administrador de Banco de Dados</option>
                         <option value="Administrador de Redes">Administrador de Redes</option>
                         <option value="Analista de Automação">Analista de Automação</option>
@@ -172,7 +167,7 @@
                         <option value="Tester">Tester</option>
                     </select>
                 </div>
-                <input type="submit" value="Filtrar">
+                <input id="buttonFiltrar" type="submit" value="Filtrar">
             </form>
         </div>
         <?php
@@ -182,39 +177,39 @@
             $bancodados = 'empresa';
             $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
 
-            $filtro_nome = isset($_GET['nome-fun']) ? $_GET['nome-fun'] : '';
-            $filtro_cargo = isset($_GET['cargo-fun']) ? $_GET['cargo-fun'] : '';
-
-            function mostrarFuncionarios($conexao, $filtro_nome, $filtro_cargo){
-                $sql = 'select * from funcionario';
-
-                if ($filtro_nome != '' && $filtro_cargo != '') {
-                    $sql .= " where nome like '%$filtro_nome%' and cargo = '$filtro_cargo'";
-                }
-                elseif ($filtro_nome != '') {
-                    $sql .= " where nome like '%$filtro_nome%'";
-                }
-                elseif ($filtro_cargo != '') {
-                    $sql .= " where cargo = '$filtro_cargo'";
-                }
-
-                $selectfuncionarios = $conexao->query($sql);
+            
+            if (isset($_GET['cargo-fun']) && $_GET['cargo-fun'] != 'Selecionar') {
+                $filtrocargo = $_GET['cargo-fun'];
+                $selectfuncionarios = $conexao->query("select * from funcionario where cargo = '$filtrocargo'");
                 $rowsFuncionarios = $selectfuncionarios->fetch_all(MYSQLI_ASSOC);
-
                 function renderTemplate($funcionario){
                     include 'template.php';
                 }
-
+                foreach ($rowsFuncionarios as $funcionario){
+                    renderTemplate($funcionario);
+                }
+            }
+            else if (!isset($_GET['cargo-fun']) || ($_GET['cargo-fun'] == 'Selecionar')){
+                $selectfuncionarios = $conexao->query('select * from funcionario');
+                $rowsFuncionarios = $selectfuncionarios->fetch_all(MYSQLI_ASSOC);
+                function renderTemplate($funcionario){
+                    include 'template.php';
+                }
                 foreach ($rowsFuncionarios as $funcionario){
                     renderTemplate($funcionario);
                 }
             }
 
-            mostrarFuncionarios($conexao, $filtro_nome, $filtro_cargo);
-
             mysqli_close($conexao);
         ?>
     </section>
+
+    <footer id="footer">
+        <div id="footerp">
+            <p id="pp1">TecnoPink</p>
+            <p id="pp2">Sua empresa de Tecnologia Perfeita!</p>
+        </div>
+    </footer>
 
 </body>
 </html>
