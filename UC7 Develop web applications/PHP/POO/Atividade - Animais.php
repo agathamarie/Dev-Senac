@@ -100,8 +100,6 @@ class Passaro extends Vertebrado {
     public function voar() {}
     public function botarOvo() {}
 }
-
-
 class Mamifero extends Vertebrado {
     public $respiracaoPulmonar;
     public $reproducaoSexuada;
@@ -139,7 +137,6 @@ class Ornitorrinco extends Mamifero {
     public function botarOvo() {}
     public function amamentar() {}
 }
-
 class Morcego extends Mamifero {
     public $noturno;
     public $ecolocalizacao;
@@ -157,7 +154,6 @@ class Morcego extends Mamifero {
     public function voar() {}
     public function amamentar() {}
 }
-
 class Baleia extends Mamifero {
     public $grande;
     public $vocalizacao;

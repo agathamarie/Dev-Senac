@@ -63,7 +63,7 @@
                 return;
             }
             else if($a == "frear"){
-                echo $this->modelo . " freiou<br>";
+                echo $this->modelo . " freou<br>";
             }
             else if($a == "parar"){
                 echo $this->modelo . " parou<br>";
