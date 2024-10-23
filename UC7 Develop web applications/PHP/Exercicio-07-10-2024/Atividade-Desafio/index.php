@@ -14,14 +14,6 @@
         </div>
 
         <nav id="nav-header">
-            <div id="box-btn-hamburguer">
-                <button id="btn-hamburguer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </button>
-            </div>
-
             <ul>
                 <li class="item-nav-header">
                     <a href="#">Inicio</a>

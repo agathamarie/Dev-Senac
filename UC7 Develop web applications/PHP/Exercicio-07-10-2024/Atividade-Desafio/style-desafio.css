@@ -70,45 +70,6 @@
     box-shadow: 0 1px 0 #5a5658;
 }
 
-/* menu sanduiche */
-#header-site #nav-header #box-btn-hamburguer{
-    display: none;
-}
-
-#header-site #nav-header #box-btn-hamburguer #btn-hamburguer{
-    background: transparent;
-    border: none;
-}
-
-#header-site #nav-header #box-btn-hamburguer div{
-    height: 5px;
-    width: 40px;
-    background-color: white;
-    margin-bottom: 5px;
-}
-
-/* menu sanduiche fechado*/
-#header-site #nav-header #btn-hamburguer.ativo div{
-    display: none;
-}
-
-#header-site #nav-header #btn-hamburguer.ativo div:first-child{
-    display: block;
-    position: relative;
-    margin: 0;
-    transform: translate(2%, 72%) rotate(45deg);
-    transition: transform 0.3s ease;
-}
-
-#header-site #nav-header #btn-hamburguer.ativo div:last-child{
-    display: block;
-    position: relative;
-    margin: 0;
-    transform: translateY(-40%) rotate(-45deg);
-    transition: transform 0.3s ease;
-}
-
-
 /* ------ Parte do Formulário ------ */
 #secFormulario{
     display: flex;

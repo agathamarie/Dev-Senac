@@ -1,0 +1,141 @@
+body{
+    background-color: #f1f1f1;
+}
+
+/* ------ Parte do Formulário ------ */
+p {
+    padding: 12px;
+    font-size: 25px;
+}
+
+#secFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem 1.5rem;
+    flex-direction: column;
+}
+    #formCadastro{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: flex-end
+    }
+        .row{
+            width: 450px;
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .input{
+                height: 40px;
+                width: auto;
+                border-radius: 0px;
+                border: 1px solid #ffffff;
+                background-color: #ffffff;
+            }
+                .input::placeholder{
+                    padding: 5px;
+                    color: #1b1b1b;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 300;
+                }
+            .input:focus {
+                outline-color: #7D1010;
+                box-shadow: 0 0 5px #333;
+            }         
+
+        .rowbutton{
+            width: 450px;
+            align-items: center;
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        #buttonSubmit {
+            height: 30px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #1b1b1b;
+            color: #EDEEE9;
+            transition: background-color 0.1s ease-in-out;
+        }
+            
+        #buttonSubmit:hover {
+            color: #EDEEE9;
+            font-weight: 600;
+            background-color: #7D1010;
+        }
+
+/* ------ Parte dos Clientes ------ */
+#listarClientes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 768px;
+}
+
+.card-cliente {
+    width: 500px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#filtroform {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.rowfun {
+    width: auto;
+    margin: 5px 0;
+}
+
+.input {
+    height: 30px;
+    width: auto;
+    border-radius: 0px;
+    border: 1px solid #3a3a3a;
+    background-color: #ffffff;
+}
+
+.input::placeholder {
+    padding: 5px;
+    color: #1b1b1b;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+#buttonFiltrar {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1b1b1b;
+    color: #EDEEE9;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#buttonFiltrar:hover {
+    color: #EDEEE9;
+    font-weight: 600;
+    background-color: #7D1010;
+}
