@@ -83,10 +83,10 @@
                     <a href="#">Inicio</a>
                 </li>
                 <li class="item-nav-header">
-                    <a href="#">Registrar Livros</a>
+                    <a href="paginaLivro.php">Registrar Livros</a>
                 </li>
                 <li class="item-nav-header">
-                    <a href="#">Registar Clientes</a>
+                    <a href="paginaCliente.php">Registar Clientes</a>
                 </li>
                 <li class="item-nav-header">
                     <a href="#">Outros</a>

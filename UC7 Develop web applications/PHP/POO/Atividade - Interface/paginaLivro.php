@@ -10,20 +10,17 @@
     <?php include ('templateheader.php') ?>
 
     <section id="secFormulario">
-        <p>Cadastre um novo cliente</p>
+        <p>Cadastre um novo livro</p>
 
-        <form method="post" id="formCadastro"> <!-- Mudança para POST -->
+        <form method="post" id="formCadastro">
             <div class="row">
-                <input type="text" class="input" name="nome" placeholder="Nome: ">
+                <input type="text" class="input" name="titulo" placeholder="Titulo: ">
             </div>
             <div class="row">
-                <input type="text" class="input" name="email" placeholder="Email: ">
+                <input type="text" class="input" name="autor" placeholder="Autor: ">
             </div>
             <div class="row">
-                <input type="text" class="input" name="telefone" placeholder="Telefone/Celular: ">
-            </div>
-            <div class="row">
-                <input type="text" class="input" name="cpf" placeholder="CPF: ">
+                <input type="text" class="input" name="genero" placeholder="Gênero: ">
             </div>
             <div class="rowbutton">
                 <input type="submit" id="buttonSubmit" value="Cadastrar">
@@ -37,17 +34,15 @@
             $bancodados = 'biblioteca';
             $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
 
-            // Mudança para $_POST
-            if (isset($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['cpf'])) {
-                $nome = $_POST['nome'];
-                $email = $_POST['email'];
-                $telefone = $_POST['telefone'];
-                $cpf = $_POST['cpf'];
+            if (isset($_POST['titulo'], $_POST['autor'], $_POST['genero'])) {
+                $nome = $_POST['titulo'];
+                $email = $_POST['autor'];
+                $telefone = $_POST['genero'];
 
-                $query = "INSERT INTO usuario (nome, email, telefone, cpf) VALUES ('$nome', '$email', '$telefone', '$cpf')";
+                $query = "INSERT INTO livro (titulo, autor, genero) VALUES ('$titulo', '$autor', '$genero')";
 
                 if (mysqli_query($conexao, $query)) {
-                    echo "Novo cliente cadastrado com sucesso.";
+                    echo "Livro cadastrado com sucesso.";
                 } else {
                     echo "Erro: " . mysqli_error($conexao);
                 }
@@ -61,35 +56,34 @@
         <div id="filtro">
             <form id="filtroform" method="get">
                 <div class="rowfun">      
-                    <input type="text" class="input" name="cpf" placeholder="CPF: ">
+                    <input type="text" class="input" name="titulo" placeholder="Titulo: ">
                 </div>
                 <input id="buttonFiltrar" type="submit" value="Filtrar">
             </form>
         </div>
 
         <?php
-            // Conexão com o banco de dados
             $servidor = 'localhost';
             $usuario = 'root';
             $senha = '';
             $bancodados = 'biblioteca';
             $conexao = mysqli_connect($servidor, $usuario, $senha, $bancodados);
 
-            if (isset($_GET['cpf']) && !empty($_GET['cpf'])) {
-                $filtrocpf = $_GET['cpf'];
-                $selectclientes = $conexao->query("SELECT * FROM usuario WHERE cpf = '$filtrocpf'");
+            if (isset($_GET['titulo']) && !empty($_GET['titulo'])) {
+                $filtrotitulo = $_GET['titulo'];
+                $selectlivro = $conexao->query("SELECT * FROM livro WHERE titulo = '$filtrotitulo'");
             } else {
-                $selectclientes = $conexao->query('SELECT * FROM usuario');
+                $selectlivro = $conexao->query('SELECT * FROM livro');
             }
 
-            if ($selectclientes) {
-                $rowsclientes = $selectclientes->fetch_all(MYSQLI_ASSOC);
-                function renderTemplate($cliente) {
-                    include 'templateCliente.php';
+            if ($selectlivro) {
+                $rowslivro = $selectlivro->fetch_all(MYSQLI_ASSOC);
+                function renderTemplate($livro) {
+                    include 'templateLivro.php';
                 }
                 
-                foreach ($rowsclientes as $cliente) {
-                    renderTemplate($cliente);
+                foreach ($rowslivro as $livro) {
+                    renderTemplate($livro);
                 }
             } else {
                 echo "Erro na consulta: " . $conexao->error;
